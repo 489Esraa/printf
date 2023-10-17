@@ -1,0 +1,11 @@
+#include "main.h"
+
+/**
+ * _myputchar - function prints a character use it in code.
+ * @c: parameter is a character
+ * Return: integer number
+*/
+int _myputchar(char c)
+{
+return (write(1, &c, 1));
+}
