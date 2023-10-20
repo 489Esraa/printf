@@ -2,20 +2,20 @@
 
 /**
  * _print_binary - print a binary number of function.
- * @n: parameter is unsigned integer
+ * @y: parameter is unsigned integer
  * Return: give length.
 */
-int _print_binary(unsigned int n)
+int _print_binary(unsigned int y)
 {
 unsigned int e, a;
 unsigned int arr[32];
 int cn = 0;
 e = 2147483648;
-arr[0] = n / e;
+arr[0] = y / e;
 for (a = 1; a < 32; a++)
 {
 e /= 2;
-arr[a] = (n / e) % 2;
+arr[a] = (y / e) % 2;
 }
 for (a = 0; a < 31; a++)
 if (arr[a])

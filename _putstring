@@ -1,9 +1,0 @@
-/**
- * _putstring - function that print the string.
- * @str: parameter is string
- * Return: length of the string.
-*/
-int _putstring(char *str)
-{
-return (write(1, str, strlen(str)));
-}

@@ -2,10 +2,10 @@
 
 /**
  * _myputchar - function prints a character use it in code.
- * @c: parameter is a character
+ * @f: parameter is a character
  * Return: integer number
 */
-int _myputchar(char c)
+int _myputchar(char f)
 {
-return (write(1, &c, 1));
+return (write(1, &f, 1));
 }
