@@ -9,3 +9,4 @@ int _putstring(char *ptrn)
 {
 return (write(1, ptrn, strlen(ptrn)));
 }
+

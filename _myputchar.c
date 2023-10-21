@@ -9,3 +9,4 @@ int _myputchar(char f)
 {
 return (write(1, &f, 1));
 }
+

@@ -39,3 +39,4 @@ int _check_arg(char ca, va_list li)
 	}
 	return (len);
 }
+

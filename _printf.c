@@ -1,39 +1,31 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
-
 /**
- * _printf - function that produces output according to a format specifiers.
- * @format: the format string specifier
- * Return: the number of characters
-*/
+ * _printf - function that produces output according to a format.
+ * @format: the format string with specifier
+ * Return: the number of characters printed
+ */
 int _printf(const char *format, ...)
 {
-int count = 0;
-va_list ptr;
+	unsigned int x, count = 0;
+	va_list ptrn;
 
-if (format == NULL)
-return (-1);
-va_start(ptr, format);
-while (*format)
-{
-if (*format != '%')
-{
-count += _myputchar(format[x]);
-continue;
+	if (format == NULL)
+		return (-1);
+	va_start(ptrn, format);
+
+	for (x = 0; format[x]; x++)
+	{
+		if (format[x] != '%')
+		{
+			count += _myputchar(format[x]);
+			continue;
+		}
+		if (x++ == strlen(format) - 1)
+			return (-1);
+		count += _check_arg(format[x], ptrn);
+	}
+
+	va_end(ptrn);
+	return (count);
 }
-else
-{
-format++;
-if (*format == ' ' || *format == '\0')
-return (-1);
-if (*format == '%')
-{
-_myputchar('%');
-count++;
-}
-}
-va_end(ptr);
-return (count);
-}
-}
+
