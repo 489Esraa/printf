@@ -7,21 +7,25 @@
 */
 int _printf(const char *format, ...)
 {
-insigned int x, count = 0;
+int count = 0;
 va_list ptr;
 if (format == NULL)
 return (-1);
 va_start(ptr, format);
-for (x = 0; format[i]; x++)
+while (*format)
 {
-if (format != '%')
+if (*format != '%')
 {
 count += _myputchar(format[x]);
 continue;
 }
-if (x++ == strlen(format) - 1)
-return (-1);
-count += _check_arg(format[x], ptr);
+else
+{
+format++;
+if (*format == '%')
+_myputchar('%');
+count++;
+}
 }
 va_end(ptr);
 return (count);
