@@ -20,4 +20,3 @@ void _my_putint(int u)
 		_my_putint(m / 10);
 	_myputchar((m % 10) + '0');
 }
-
