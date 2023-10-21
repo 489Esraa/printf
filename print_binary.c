@@ -10,6 +10,8 @@ int _print_binary(unsigned int y)
 unsigned int e, a;
 unsigned int arr[32];
 int cn = 0;
+char z;
+
 e = 2147483648;
 arr[0] = y / e;
 for (a = 1; a < 32; a++)
@@ -22,11 +24,10 @@ if (arr[a])
 break;
 for (; a < 32; a++)
 {
-char z = '0' + arr[a];
+z = '0' + arr[a];
 write(1, &z, 1);
 cn++;
 }
 return (cn);
 }
 }
-
