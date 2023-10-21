@@ -15,14 +15,16 @@ va_start(ptr, format);
 while (*format)
 {
 if (*format != '%')
-{
 count += _myputchar(format[x]);
 continue;
 }
 else
 {
 format++;
+if (*format == ' ' || *format == '\0')
+return (-1); 
 if (*format == '%')
+{
 _myputchar('%');
 count++;
 }
